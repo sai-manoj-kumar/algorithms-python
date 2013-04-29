@@ -4,7 +4,7 @@ import eratosthenes
 
 
 def main():
-    primes = list(eratosthenes.sieve(100000000))
+    primes = list(eratosthenes.sieve(500000000))  # 2m 58s
     print len(primes)
 
 
