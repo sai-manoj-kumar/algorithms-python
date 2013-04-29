@@ -1,10 +1,10 @@
 __author__ = 'saimanoj'
 
-import eratosthenes
+import sieve
 
 
 def main():
-    primes = list(eratosthenes.sieve(500000000))  # 2m 58s
+    primes = list(sieve.eratosthenes(100))  # 2m 58s
     print len(primes)
 
 

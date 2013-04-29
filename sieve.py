@@ -1,7 +1,7 @@
 __author__ = 'saimanoj'
 
 
-def sieve(n):
+def eratosthenes(n):
     primes_bool = [True] * ((n - 1) / 2)  # True for Odd numbers from 3 to n.
     if n >= 2:
         yield 2
