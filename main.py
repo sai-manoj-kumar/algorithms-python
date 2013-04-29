@@ -4,8 +4,9 @@ import sieve
 
 
 def main():
-    primes = list(sieve.eratosthenes(100))  # 2m 58s
+    primes = list(sieve.sundaram(10000))
     print len(primes)
+    # print primes
 
 
 if __name__ == "__main__":
