@@ -4,7 +4,8 @@ import eratosthenes_sieve
 
 
 def main():
-    eratosthenes_sieve.sieve(100)
+    primes = eratosthenes_sieve.sieve(100)
+    print len(primes)
 
 
 if __name__ == "__main__":
