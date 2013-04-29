@@ -7,7 +7,8 @@ def sieve(n):
         if is_prime:
             yield p
             x = p * p
+            increment = p if p == 2 else 2 * p
             while x <= n:
                 primes_bool[x] = False
-                x += p
+                x += increment
 
