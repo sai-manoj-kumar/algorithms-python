@@ -4,7 +4,7 @@ import eratosthenes_sieve
 
 
 def main():
-    primes = eratosthenes_sieve.sieve(100)
+    primes = list(eratosthenes_sieve.sieve(100000000))
     print len(primes)
 
 
