@@ -6,7 +6,10 @@ import ds.tree
 
 def main():
     t = ds.tree.Tree('/')
-    t.add(t.root, ds.tree.TreeNode('a'))
+    node = ds.tree.TreeNode('a')
+    t.add(t.root, node)
+    t.remove(node)
+    print 'bye'
 
 
 def sundaram_sieve_demo():
