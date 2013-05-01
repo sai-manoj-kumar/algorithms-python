@@ -33,6 +33,8 @@ class RootNode(TreeNode):
 
 class Tree(object):
     """Represents a Tree using TreeNode and RootNode classes.
+        Root Node is always present in our Tree. It is never removed. Though
+         its value can be changed.
 
     Attributes:
         root: RootNode object representing root of the tree.
@@ -56,14 +58,36 @@ class Tree(object):
         assert self.tree_height >= child.height
 
     def remove(self, node):
-        if node in node.parent.children:
-            node.parent.children.remove(node)
-            if node.height == self.tree_height:
-                pass
-                # TODO: Modify tree height based on whether there is other node
-                # of same height or not. Needs get_all_nodes() function,
-                # which is yet to be implemented.
-            self.node_count -= 1
+        """
+            Removes only leaf nodes. Checks whether node is root or node,
+            because some times root node may not have any children but
+            removing it is not valid.
+        """
+
+        if node.children:
+            return
+        if not node.parent or isinstance(node, RootNode):
+            return
+        assert node in node.parent.children
+        node.parent.children.remove(node)
+        if node.height == self.tree_height:
+            nodes = self.get_all_nodes()
+            change_required = True
+            for x in nodes:
+                assert x.height <= self.tree_height
+                if x.height == self.tree_height:
+                    change_required = False
+                    break
+            if change_required:
+                self.tree_height -= 1
+        self.node_count -= 1
         del node
 
+    def get_all_nodes(self):
+        nodes = [self.root]
+        for node in nodes:
+            if node.children:
+                nodes.extend(node.children)
+
+        return nodes
 
