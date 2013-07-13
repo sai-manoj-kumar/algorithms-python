@@ -1,4 +1,5 @@
 algorithms-python
 =================
 
-Implementation of various Algorithms and Data Structures learnt while preparing for my Placements.
+Implementation(in Python) of various Algorithms learnt while preparing for placements.
+
