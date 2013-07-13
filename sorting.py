@@ -4,6 +4,13 @@ __author__ = 'saimanoj'
 class Sorting:
     @staticmethod
     def counting_sort(unsorted, k):
+        """
+        Sorts the given list of "integers" ranging from "1 to k" using counting
+        sort algorithm.
+        :param unsorted: unsorted list of integers.
+        :param k: Maximum value of integers in the given list starting from 1.
+        :return: Returns sorted list.
+        """
         counter = [0] * (k + 1)
         n = len(unsorted)
         result = [0] * n
@@ -19,6 +26,11 @@ class Sorting:
 
     @staticmethod
     def insertion_sort(unsorted):
+        """
+        Sorts given list of numbers using insertion sort algorithm.
+        :param unsorted: unsorted list of numbers
+        :return: sorted list of numbers
+        """
         n = len(unsorted)
         for j in range(1, n):
             key = unsorted[j]
