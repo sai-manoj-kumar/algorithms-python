@@ -1,12 +1,12 @@
 __author__ = 'saimanoj'
 
 import unittest
-import insertion_sort
+from sorting import Sorting
 
 
 class InsertionSortTests(unittest.TestCase):
     def insertion_sort_check(self, unsorted, expected):
-        actual = insertion_sort.sort(unsorted)
+        actual = Sorting.insertion_sort(unsorted)
         # sorted is a built-in function, so using actual.
         self.assertEqual(actual, expected)
 

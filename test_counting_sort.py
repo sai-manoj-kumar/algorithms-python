@@ -1,12 +1,12 @@
 __author__ = 'saimanoj'
 
 import unittest
-import counting_sort
+from sorting import Sorting
 
 
 class CountingSortTests(unittest.TestCase):
     def counting_sort_check(self, unsorted, expected, k):
-        actual = counting_sort.sort(unsorted, k)
+        actual = Sorting.counting_sort(unsorted, k)
         # sorted is a built-in function, so using actual.
         self.assertEqual(actual, expected)
 
