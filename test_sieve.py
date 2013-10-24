@@ -5,6 +5,9 @@ import sieve
 
 
 class SieveTests(unittest.TestCase):
+    def test_emptylist_n_1(self):
+        self.assertEqual([], list(sieve.eratosthenes(1)))
+
     def test_1_is_not_prime(self):
         self.assertNotIn(1, list(sieve.eratosthenes(-10)))
 
